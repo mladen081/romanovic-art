@@ -47,12 +47,15 @@ h1 {
   text-align: center;
 }
 
+p {
+  font-size: 1.4rem;
+}
+
 @media (max-width: 991px) {
   h1 {
     font-size: 3.5rem;
   }
 }
-
 
 @media (max-width: 767px) {
   h1 {

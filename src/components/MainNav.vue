@@ -160,18 +160,22 @@ header nav .dropdown-nav {
   flex-direction: column;
   position: fixed;
   width: 100%;
-  max-width: 25rem;
+  max-width: 30rem;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
+  padding-top: 7rem;
+  background-color: rgba(255, 255, 255, 0.9);
   top: 0%;
   left: 0;
+  border-right: 1px solid #000;
+  border-top-right-radius: 2rem;
 }
 
 header nav .dropdown-nav li {
   margin-left: 0;
 }
 header nav .dropdown-nav li .link {
-  color: #fff;
+  color: #000;
+  padding-left: 0.6rem;
 }
 
 header nav .mobile-nav-enter-active,
@@ -181,7 +185,7 @@ header nav .mobile-nav-leave-active {
 
 header nav .mobile-nav-enter-from,
 header nav .mobile-nav-leave-to {
-  transform: translateX(-25rem);
+  transform: translateX(-30rem);
 }
 
 header nav .mobile-nav-enter-to {
@@ -190,7 +194,8 @@ header nav .mobile-nav-enter-to {
 
 .scrolled-nav {
   background-color: #000;
-  box-shadow: 0 0.4rem 0.6rem -0.1rem rgba(0, 0, 0, 0.1), 0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0.4rem 0.6rem -0.1rem rgba(0, 0, 0, 0.1),
+    0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.06);
 }
 
 .scrolled-nav nav {
@@ -199,7 +204,8 @@ header nav .mobile-nav-enter-to {
 
 .scrolled-nav nav .branding img {
   width: 4rem;
-  box-shadow: 0 0.4rem 0.6rem -0.1rem rgba(0, 0, 0, 0.1), 0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0.4rem 0.6rem -0.1rem rgba(0, 0, 0, 0.1),
+    0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.06);
 }
 
 @media (min-width: 1200px) {
