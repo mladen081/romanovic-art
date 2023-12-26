@@ -87,7 +87,7 @@ header nav {
   position: relative;
   display: flex;
   flex-direction: row;
-  padding: 12px 0;
+  padding: 1.2rem 0;
   transition: 0.5s ease all;
   width: 90%;
   margin: 0 auto;
@@ -103,15 +103,15 @@ header nav ul .link {
 
 header nav ul li {
   text-transform: uppercase;
-  padding: 16px;
-  margin-left: 16px;
+  padding: 1.6rem;
+  margin-left: 1.6rem;
 }
 
 header nav ul li .link {
-  font-size: 14px;
+  font-size: 1.4rem;
   transition: 0.5s ease all;
-  padding-bottom: 4px;
-  border-bottom: 1px solid transparent;
+  padding-bottom: 0.4rem;
+  border-bottom: 0.1rem solid transparent;
 }
 
 header nav ul li .link:hover {
@@ -125,7 +125,7 @@ header nav .branding {
 }
 
 header nav .branding img {
-  width: 50px;
+  width: 5rem;
   transition: 0.5s ease all;
 }
 
@@ -141,13 +141,13 @@ header nav .icon {
   align-items: center;
   position: absolute;
   top: 0;
-  right: 24px;
+  right: 2.4rem;
   height: 100%;
 }
 
 header nav .icon i {
   cursor: pointer;
-  font-size: 24px;
+  font-size: 2.4rem;
   transition: 0.8s ease all;
 }
 
@@ -160,7 +160,7 @@ header nav .dropdown-nav {
   flex-direction: column;
   position: fixed;
   width: 100%;
-  max-width: 250px;
+  max-width: 25rem;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.95);
   top: 0%;
@@ -181,7 +181,7 @@ header nav .mobile-nav-leave-active {
 
 header nav .mobile-nav-enter-from,
 header nav .mobile-nav-leave-to {
-  transform: translateX(-250px);
+  transform: translateX(-25rem);
 }
 
 header nav .mobile-nav-enter-to {
@@ -190,16 +190,16 @@ header nav .mobile-nav-enter-to {
 
 .scrolled-nav {
   background-color: #000;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0.4rem 0.6rem -0.1rem rgba(0, 0, 0, 0.1), 0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.06);
 }
 
 .scrolled-nav nav {
-  padding: 8px 0;
+  padding: 0.8rem 0;
 }
 
 .scrolled-nav nav .branding img {
-  width: 40px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: 4rem;
+  box-shadow: 0 0.4rem 0.6rem -0.1rem rgba(0, 0, 0, 0.1), 0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.06);
 }
 
 @media (min-width: 1200px) {

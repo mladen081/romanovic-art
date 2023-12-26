@@ -1,5 +1,7 @@
 <template>
-  <h1>SECOND PAGE</h1>
+  <div class="pagecontent">
+    <h1>SECOND PAGE</h1>
+  </div>
 </template>
 
 <script>
@@ -8,10 +10,4 @@ export default {
 }
 </script>
 
-<style scoped>
-h1 {
-  padding-top: 100px;
-  font-size: 40px;
-  text-align: center;
-}
-</style>
+<style scoped></style>
