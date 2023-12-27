@@ -36,7 +36,7 @@ body {
 }
 
 .pagecontent {
-  padding: 7rem 1rem;
+  padding: 5.5rem 0;
 }
 
 /* Typography */
