@@ -5,8 +5,12 @@
         <img src="@/assets/logo.png" alt="Nav logo" />
       </div>
       <ul v-show="!mobile" class="navigation">
-        <li><router-link class="link" :to="{ name: 'Home' }">Home</router-link></li>
-        <li><router-link class="link" :to="{ name: 'SecondPage' }">Second</router-link></li>
+        <li :class="{ 'active-tab': $route.name === 'Home' }">
+          <router-link class="link" :to="{ name: 'Home' }" exact>Home</router-link>
+        </li>
+        <li :class="{ 'active-tab': $route.name === 'SecondPage' }">
+          <router-link class="link" :to="{ name: 'SecondPage' }" exact>Second</router-link>
+        </li>
       </ul>
       <div class="icon">
         <i
@@ -18,8 +22,12 @@
       </div>
       <transition name="mobile-nav">
         <ul v-show="mobileNav" class="dropdown-nav">
-          <li><router-link class="link" :to="{ name: 'Home' }">Home</router-link></li>
-          <li><router-link class="link" :to="{ name: 'SecondPage' }">Second</router-link></li>
+          <li :class="{ 'active-tab': $route.name === 'Home' }">
+            <router-link class="link" :to="{ name: 'Home' }" exact>Home</router-link>
+          </li>
+          <li :class="{ 'active-tab': $route.name === 'SecondPage' }">
+            <router-link class="link" :to="{ name: 'SecondPage' }" exact>Second</router-link>
+          </li>
         </ul>
       </transition>
     </nav>
@@ -43,6 +51,7 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.updateScroll)
+    this.checkScrean()
   },
   methods: {
     toggleMobileNav() {
@@ -95,7 +104,7 @@ header nav {
 
 header nav ul,
 header nav ul .link {
-  font-weight: 500;
+  font-weight: 700;
   color: #fff;
   list-style: none;
   text-decoration: none;
@@ -134,6 +143,16 @@ header nav .navigation {
   align-items: center;
   flex: 1;
   justify-content: flex-end;
+}
+
+header nav .navigation li.active-tab .link {
+  color: #00afea;
+}
+
+header nav .dropdown-nav li .link:hover,
+header nav .dropdown-nav li.active-tab .link {
+  color: #008080;
+  border-color: #008080;
 }
 
 header nav .icon {
