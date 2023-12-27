@@ -114,11 +114,11 @@ export default {
   height: 60vh;
   background-color: #fff;
   position: relative;
-  border-bottom: 5px solid #00afea;
+  border-bottom: 2px solid #008080;
 }
 
 .heading-primary {
-  color: #000;
+  color: #008080;
   text-transform: uppercase;
   text-align: center;
   position: absolute;
@@ -141,7 +141,7 @@ export default {
 .flex-content-1,
 .flex-content-2 {
   padding: 2rem 2rem;
-  border-bottom: 5px solid #00afea;
+  border-bottom: 2px solid #008080;
 }
 
 @media (max-width: 1200px) {

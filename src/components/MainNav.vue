@@ -104,7 +104,7 @@ header nav {
 
 header nav ul,
 header nav ul .link {
-  font-weight: 700;
+  font-weight: 400;
   color: #fff;
   list-style: none;
   text-decoration: none;
@@ -185,8 +185,8 @@ header nav .dropdown-nav {
   background-color: rgba(255, 255, 255, 0.9);
   top: 0%;
   left: 0;
-  border-right: 1px solid #000;
-  border-top-right-radius: 2rem;
+  border-right: 0.1rem solid #000;
+  border-top-right-radius: 1rem;
 }
 
 header nav .dropdown-nav li {
