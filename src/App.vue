@@ -36,30 +36,12 @@ body {
 }
 
 .pagecontent {
-  padding: 5.5rem 0;
+  padding: 7.5rem 0;
 }
 
 /* Typography */
 
-h1 {
-  font-size: 4rem;
-  margin: 2rem 0;
-  text-align: center;
-}
-
 p {
   font-size: 1.4rem;
-}
-
-@media (max-width: 991px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-}
-
-@media (max-width: 767px) {
-  h1 {
-    font-size: 3rem;
-  }
 }
 </style>

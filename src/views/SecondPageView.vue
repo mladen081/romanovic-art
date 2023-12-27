@@ -1,7 +1,5 @@
 <template>
-  <div class="pagecontent">
-    <h1>SECOND PAGE</h1>
-  </div>
+  <div class="pagecontent"></div>
 </template>
 
 <script>
