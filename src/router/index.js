@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import HomeView from '@/views/HomeView.vue'
-import SecondPageView from '@/views/SecondPageView.vue'
+import NatalijaView from '@/views/NatalijaView.vue'
 
 const routes = [
   {
@@ -10,9 +10,9 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/second',
-    name: 'SecondPage',
-    component: SecondPageView
+    path: '/natalija',
+    name: 'Natalija',
+    component: NatalijaView
   }
 ]
 

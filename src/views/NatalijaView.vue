@@ -1,15 +1,15 @@
 <template>
   <div class="pagecontent">
-    <top-header heading-primary-main-name="Romanovic" />
-    <top-header heading-primary-main-name="Romanovic"/>
-    <top-header heading-primary-main-name="Romanovic"/>
+    <top-header heading-primary-main-name="Natalija" />
+    <top-header heading-primary-main-name="Natalija" />
+    <top-header heading-primary-main-name="Natalija" />
   </div>
 </template>
 
 <script>
 import TopHeader from '@/components/TopHeader.vue'
 export default {
-  name: 'HomeView',
+  name: 'NatalijaView',
   components: {
     TopHeader
   }

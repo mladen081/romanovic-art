@@ -8,8 +8,8 @@
         <li :class="{ 'active-tab': $route.name === 'Home' }">
           <router-link class="link" :to="{ name: 'Home' }" exact>Home</router-link>
         </li>
-        <li :class="{ 'active-tab': $route.name === 'SecondPage' }">
-          <router-link class="link" :to="{ name: 'SecondPage' }" exact>Second</router-link>
+        <li :class="{ 'active-tab': $route.name === 'Natalija' }">
+          <router-link class="link" :to="{ name: 'Natalija' }" exact>Natalija</router-link>
         </li>
       </ul>
       <div class="icon">
@@ -25,8 +25,8 @@
           <li :class="{ 'active-tab': $route.name === 'Home' }">
             <router-link class="link" :to="{ name: 'Home' }" exact>Home</router-link>
           </li>
-          <li :class="{ 'active-tab': $route.name === 'SecondPage' }">
-            <router-link class="link" :to="{ name: 'SecondPage' }" exact>Second</router-link>
+          <li :class="{ 'active-tab': $route.name === 'Natalija' }">
+            <router-link class="link" :to="{ name: 'Natalija' }" exact>Natalija</router-link>
           </li>
         </ul>
       </transition>
