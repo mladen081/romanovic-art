@@ -1,16 +1,16 @@
 <template>
-  <div class="pagecontent nat"></div>
+  <div class="pagecontent m"></div>
 </template>
 
 <script>
 export default {
-  name: 'NatalijaView'
+  name: 'MilomirView'
 }
 </script>
 
 <style scoped>
-.nat {
-  background-color: blueviolet;
+.m {
+  background-color: darkred;
   height: 100vh;
 }
 </style>
