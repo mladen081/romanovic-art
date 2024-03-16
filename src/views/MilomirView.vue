@@ -1,5 +1,5 @@
 <template>
-  <div class="pagecontent m"></div>
+  <div class="pagecontent"></div>
 </template>
 
 <script>
@@ -8,9 +8,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.m {
-  background-color: darkred;
-  height: 100vh;
-}
-</style>
+<style scoped></style>

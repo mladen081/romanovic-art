@@ -1,5 +1,5 @@
 <template>
-  <div class="pagecontent nat"></div>
+  <div class="pagecontent"></div>
 </template>
 
 <script>
@@ -8,9 +8,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.nat {
-  background-color: blueviolet;
-  height: 100vh;
-}
-</style>
+<style scoped></style>
