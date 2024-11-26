@@ -1,0 +1,103 @@
+@import './base.css';
+
+main,
+footer,
+header {
+  padding: 0 5% 0 5%;
+}
+
+main {
+  padding-top: 6rem;
+}
+
+footer {
+  position: fixed;
+  background-color: white;
+  z-index: 100;
+  bottom: 1em;
+  right: 0;
+}
+
+header {
+  position: fixed;
+  background-color: white;
+  z-index: 100;
+  top: 1rem;
+  right: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 200;
+  padding-bottom: 2rem;
+}
+
+p,
+a,
+button,
+label,
+input {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: black;
+}
+
+label,
+input,
+button {
+  display: block;
+  margin-bottom: 1rem;
+}
+button {
+  padding: 0.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  margin-bottom: 3rem;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid red;
+}
+
+input::placeholder {
+  color: silver;
+}
+
+input:focus::placeholder {
+  color: red;
+}
+
+input::placeholder {
+  font-size: 1.4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid black;
+  padding-bottom: 1px;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  background-color: white;
+}
+
+button:hover {
+  background-color: silver;
+}
+
+i:hover {
+  color: red;
+}
