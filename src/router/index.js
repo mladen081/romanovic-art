@@ -13,8 +13,8 @@ const routes = [
     path: '/delete-user',
     component: AdminView,
     beforeEnter: (to, from, next) => {
-      const authStore = useAuthStore() // Access the auth store
-      authStore.checkLogin() // Ensure we check login status
+      const authStore = useAuthStore()
+      authStore.checkLogin()
       return authStore.role === 'ROLE_ADMIN' ? next() : next('/')
     },
   },

@@ -5,7 +5,6 @@
     </div>
   </div>
 
-  <!-- Modal for Enlarged Image -->
   <div v-if="isModalOpen" class="modal" @click="closeModal">
     <div class="modal-content" @click.stop>
       <img :src="modalImage.src" :alt="modalImage.alt" />
@@ -17,34 +16,25 @@
 <script setup>
 import { ref } from 'vue'
 
-// List of images for the gallery
 const images = [
-  { src: '/src/assets/img_2.jpg', alt: '' },
-  { src: '/src/assets/img_1.jpg', alt: '' },
-  { src: '/src/assets/img_3.jpg', alt: '' },
-  { src: '/src/assets/img_3.jpg', alt: '' },
-  { src: '/src/assets/img_1.jpg', alt: '' },
-  { src: '/src/assets/img_1.jpg', alt: '' },
-  { src: '/src/assets/img_1.jpg', alt: '' },
-  { src: '/src/assets/img_1.jpg', alt: '' },
-  { src: '/src/assets/img_1.jpg', alt: '' },
-  { src: '/src/assets/img_1.jpg', alt: '' },
-  { src: '/src/assets/img_2.jpg', alt: '' },
-  { src: '/src/assets/img_3.jpg', alt: '' },
-  { src: '/src/assets/img_1.jpg', alt: '' },
-  { src: '/src/assets/img_2.jpg', alt: '' },
+  // { src: '/src/assets/n_001.jpg', alt: '' },
+  { src: '/src/assets/n_002.jpg', alt: '' },
+  { src: '/src/assets/n_003.jpg', alt: '' },
+  { src: '/src/assets/n_004.jpg', alt: '' },
+  { src: '/src/assets/n_005.jpg', alt: '' },
+  { src: '/src/assets/n_006.jpg', alt: '' },
+  { src: '/src/assets/n_007.jpg', alt: '' },
+  { src: '/src/assets/n_008.jpg', alt: '' },
 ]
 
 const isModalOpen = ref(false)
 const modalImage = ref({ src: '', alt: '' })
 
-// Function to open the modal with the clicked image
 const openModal = (img) => {
   modalImage.value = img
   isModalOpen.value = true
 }
 
-// Function to close the modal
 const closeModal = () => {
   isModalOpen.value = false
 }
@@ -55,7 +45,7 @@ const closeModal = () => {
   margin-top: 1rem;
   padding: 1rem 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   gap: 3rem;
 }
 
@@ -72,7 +62,7 @@ const closeModal = () => {
 .gallery-item img {
   width: 100%;
   height: auto;
-  max-height: 500px;
+  max-height: 50rem;
   object-fit: cover;
 }
 
@@ -106,7 +96,7 @@ const closeModal = () => {
 }
 
 .modal-content img {
-  max-width: 60%;
+  max-width: 45%;
   max-height: auto;
   object-fit: contain;
   border: 2px solid white;
@@ -115,8 +105,8 @@ const closeModal = () => {
 .close-btn {
   position: absolute;
   top: 1%;
-  right: 20%;
-  font-size: 24px;
+  right: 27%;
+  font-size: 2rem;
   background: none;
   border: none;
   color: white;
@@ -125,7 +115,7 @@ const closeModal = () => {
 
 @media (max-width: 1200px) {
   .gallery-cont {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   }
 }
 

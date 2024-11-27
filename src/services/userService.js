@@ -17,8 +17,6 @@ axios.interceptors.request.use(
   },
 )
 
-// Fetch all todos
 export const getAllUsers = () => axios.get(`${BASE_URL}`)
 
-// Delete a todo by id
 export const deleteUser = (id) => axios.delete(`${BASE_URL}/${id}`)

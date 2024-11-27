@@ -44,8 +44,7 @@ export default {
           email: email.value,
           password: password.value,
         })
-        // Handle successful registration
-        console.log('USPESNA REGISTRACIJA')
+        console.log('successful registration')
         await authStore.login(username.value, password.value)
         router.push('/')
       } catch (error) {

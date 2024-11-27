@@ -13,8 +13,6 @@
       </div>
       <br />
       <div>
-        <!-- <button v-if="isAdmin && user.id !== 1" @click="removeUser(user.id)">Delete</button> -->
-
         <i
           v-if="isAdmin && user.id !== 1"
           class="fa-regular fa-trash"
@@ -35,16 +33,13 @@ import { useAuthStore } from '../stores/authStore'
 const authStore = useAuthStore()
 const users = ref([])
 
-// Check login and initialize user role
 onMounted(async () => {
   await authStore.checkLogin()
   listUsers()
 })
 
-// Check if the current user is an admin
 const isAdmin = computed(() => authStore.role === 'ROLE_ADMIN')
 
-// Fetch the list of todos
 const listUsers = async () => {
   try {
     const response = await getAllUsers()
@@ -57,7 +52,7 @@ const listUsers = async () => {
 const removeUser = async (userId) => {
   try {
     await deleteUser(userId)
-    console.log('BRAVO, USPESNO STE OBRISALI USERA')
+    console.log('successfully deleted user')
     listUsers()
   } catch (error) {
     console.error('Error deleting user:', error)
