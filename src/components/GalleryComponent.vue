@@ -6,16 +6,16 @@
         :class="{ active: selectedCategory === 'natalija' }"
         @click="changeCategory('natalija')"
       >
-        Natalija
+        natalija
       </button>
       <button :class="{ active: selectedCategory === 'nikola' }" @click="changeCategory('nikola')">
-        Nikola
+        nikola
       </button>
       <button
         :class="{ active: selectedCategory === 'milomir' }"
         @click="changeCategory('milomir')"
       >
-        Milomir
+        milomir
       </button>
     </div>
 
@@ -186,6 +186,14 @@ watch(
 @media (max-width: 767px) {
   .gallery-cont {
     grid-template-columns: 1fr;
+  }
+
+  .modal-content img {
+    max-width: 80%;
+  }
+
+  .close-btn {
+    right: 8%;
   }
 }
 </style>

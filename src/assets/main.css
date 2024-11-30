@@ -8,6 +8,7 @@ header {
 
 main {
   padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 footer {
@@ -30,6 +31,7 @@ h1 {
   font-size: 4rem;
   font-weight: 200;
   padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 p,
@@ -100,4 +102,10 @@ button:hover {
 
 i:hover {
   color: red;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 3rem;
+  }
 }
