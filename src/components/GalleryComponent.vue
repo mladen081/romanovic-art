@@ -1,16 +1,20 @@
 <template>
   <div>
+    <h1>gallery</h1>
     <div class="filter-buttons">
       <button
         :class="{ active: selectedCategory === 'natalija' }"
-        @click="filterImages('natalija')"
+        @click="changeCategory('natalija')"
       >
         Natalija
       </button>
-      <button :class="{ active: selectedCategory === 'nikola' }" @click="filterImages('nikola')">
+      <button :class="{ active: selectedCategory === 'nikola' }" @click="changeCategory('nikola')">
         Nikola
       </button>
-      <button :class="{ active: selectedCategory === 'milomir' }" @click="filterImages('milomir')">
+      <button
+        :class="{ active: selectedCategory === 'milomir' }"
+        @click="changeCategory('milomir')"
+      >
         Milomir
       </button>
     </div>
@@ -36,7 +40,8 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const images = [
   { src: '/src/assets/n_002.jpg', alt: '', category: 'natalija' },
@@ -50,7 +55,10 @@ const images = [
 
 const isModalOpen = ref(false)
 const modalImage = ref({ src: '', alt: '' })
-const selectedCategory = ref('natalija')
+const route = useRoute()
+const router = useRouter()
+
+const selectedCategory = ref(route.params.category)
 
 const openModal = (img) => {
   modalImage.value = img
@@ -61,17 +69,22 @@ const closeModal = () => {
   isModalOpen.value = false
 }
 
-const filterImages = (category) => {
-  selectedCategory.value = category
+const changeCategory = (category) => {
+  if (selectedCategory.value !== category) {
+    router.push(`/gallery/${category}`)
+  }
 }
 
 const filteredImages = computed(() => {
   return images.filter((img) => img.category === selectedCategory.value)
 })
 
-onMounted(() => {
-  filterImages('natalija')
-})
+watch(
+  () => route.params.category,
+  (newCategory) => {
+    selectedCategory.value = newCategory
+  },
+)
 </script>
 
 <style scoped>
