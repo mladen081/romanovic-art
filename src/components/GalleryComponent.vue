@@ -1,33 +1,56 @@
 <template>
-  <div class="gallery-cont">
-    <div v-for="(img, index) in images" :key="index" class="gallery-item" @click="openModal(img)">
-      <img :src="img.src" :alt="img.alt" />
+  <div>
+    <div class="filter-buttons">
+      <button
+        :class="{ active: selectedCategory === 'natalija' }"
+        @click="filterImages('natalija')"
+      >
+        Natalija
+      </button>
+      <button :class="{ active: selectedCategory === 'nikola' }" @click="filterImages('nikola')">
+        Nikola
+      </button>
+      <button :class="{ active: selectedCategory === 'milomir' }" @click="filterImages('milomir')">
+        Milomir
+      </button>
     </div>
-  </div>
 
-  <div v-if="isModalOpen" class="modal" @click="closeModal">
-    <div class="modal-content" @click.stop>
-      <img :src="modalImage.src" :alt="modalImage.alt" />
-      <button class="close-btn" @click="closeModal">X</button>
+    <div class="gallery-cont">
+      <div
+        v-for="(img, index) in filteredImages"
+        :key="index"
+        class="gallery-item"
+        @click="openModal(img)"
+      >
+        <img :src="img.src" :alt="img.alt" />
+      </div>
+    </div>
+
+    <div v-if="isModalOpen" class="modal" @click="closeModal">
+      <div class="modal-content" @click.stop>
+        <img :src="modalImage.src" :alt="modalImage.alt" />
+        <button class="close-btn" @click="closeModal">X</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 
 const images = [
-  { src: '/src/assets/n_002.jpg', alt: '' },
-  { src: '/src/assets/n_004.jpg', alt: '' },
-  { src: '/src/assets/n_003.jpg', alt: '' },
-  { src: '/src/assets/n_006.jpg', alt: '' },
-  { src: '/src/assets/n_007.jpg', alt: '' },
-  { src: '/src/assets/n_005.jpg', alt: '' },
-  { src: '/src/assets/n_001.jpg', alt: '' },
+  { src: '/src/assets/n_002.jpg', alt: '', category: 'natalija' },
+  { src: '/src/assets/n_004.jpg', alt: '', category: 'nikola' },
+  { src: '/src/assets/n_003.jpg', alt: '', category: 'milomir' },
+  { src: '/src/assets/n_006.jpg', alt: '', category: 'natalija' },
+  { src: '/src/assets/n_007.jpg', alt: '', category: 'nikola' },
+  { src: '/src/assets/n_005.jpg', alt: '', category: 'milomir' },
+  { src: '/src/assets/n_001.jpg', alt: '', category: 'natalija' },
 ]
 
 const isModalOpen = ref(false)
 const modalImage = ref({ src: '', alt: '' })
+const selectedCategory = ref('natalija')
 
 const openModal = (img) => {
   modalImage.value = img
@@ -37,6 +60,18 @@ const openModal = (img) => {
 const closeModal = () => {
   isModalOpen.value = false
 }
+
+const filterImages = (category) => {
+  selectedCategory.value = category
+}
+
+const filteredImages = computed(() => {
+  return images.filter((img) => img.category === selectedCategory.value)
+})
+
+onMounted(() => {
+  filterImages('natalija')
+})
 </script>
 
 <style scoped>
@@ -67,6 +102,18 @@ const closeModal = () => {
 
 .gallery-item:hover {
   transform: scale(1.05);
+}
+
+.filter-buttons {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-content: left;
+}
+
+.filter-buttons button.active {
+  background-color: silver;
 }
 
 .modal {
