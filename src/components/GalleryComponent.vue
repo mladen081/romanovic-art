@@ -17,14 +17,13 @@
 import { ref } from 'vue'
 
 const images = [
-  // { src: '/src/assets/n_001.jpg', alt: '' },
   { src: '/src/assets/n_002.jpg', alt: '' },
-  { src: '/src/assets/n_003.jpg', alt: '' },
   { src: '/src/assets/n_004.jpg', alt: '' },
-  { src: '/src/assets/n_005.jpg', alt: '' },
+  { src: '/src/assets/n_003.jpg', alt: '' },
   { src: '/src/assets/n_006.jpg', alt: '' },
   { src: '/src/assets/n_007.jpg', alt: '' },
-  { src: '/src/assets/n_008.jpg', alt: '' },
+  { src: '/src/assets/n_005.jpg', alt: '' },
+  { src: '/src/assets/n_001.jpg', alt: '' },
 ]
 
 const isModalOpen = ref(false)
@@ -46,7 +45,7 @@ const closeModal = () => {
   padding: 1rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .gallery-item {
@@ -111,6 +110,11 @@ const closeModal = () => {
   border: none;
   color: white;
   cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: silver;
 }
 
 @media (max-width: 1200px) {
