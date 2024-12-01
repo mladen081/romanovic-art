@@ -1,26 +1,24 @@
 <template>
   <header>
     <ul>
-      <ul>
-        <li>
-          <router-link exact-active-class="active-tab" to="/">home</router-link>
-        </li>
-        <li v-if="isAdmin">
-          <router-link exact-active-class="active-tab" to="/delete-user">admin</router-link>
-        </li>
-        <li v-if="!isAuth">
-          <router-link exact-active-class="active-tab" to="/register">register</router-link>
-        </li>
-        <li v-if="!isAuth">
-          <router-link exact-active-class="active-tab" to="/login">login</router-link>
-        </li>
-        <li v-if="isAuth">
-          <router-link @click="handleLogout" to="#">logout</router-link>
-        </li>
-        <li v-if="isUser">
-          <router-link exact-active-class="active-tab" to="/gallery/natalija">gallery</router-link>
-        </li>
-      </ul>
+      <li>
+        <router-link exact-active-class="active-tab" to="/">home</router-link>
+      </li>
+      <li v-if="isAdmin">
+        <router-link exact-active-class="active-tab" to="/delete-user">admin</router-link>
+      </li>
+      <li v-if="!isAuth">
+        <router-link exact-active-class="active-tab" to="/register">register</router-link>
+      </li>
+      <li v-if="!isAuth">
+        <router-link exact-active-class="active-tab" to="/login">login</router-link>
+      </li>
+      <li v-if="isUser">
+        <router-link exact-active-class="active-tab" to="/gallery/natalija">gallery</router-link>
+      </li>
+      <li v-if="isAuth">
+        <router-link @click="handleLogout" to="#">logout</router-link>
+      </li>
     </ul>
   </header>
   <main>
@@ -48,9 +46,14 @@ const handleLogout = () => {
 }
 </script>
 
-<style>
+<style scoped>
+ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: left;
+}
+
 header ul li .active-tab {
-  border-bottom: 1px solid black;
-  padding-bottom: 1px;
+  color: red;
 }
 </style>

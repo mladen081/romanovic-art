@@ -45,12 +45,14 @@ import { useRoute, useRouter } from 'vue-router'
 
 const images = [
   { src: '/src/assets/n_002.jpg', alt: '', category: 'natalija' },
-  { src: '/src/assets/n_004.jpg', alt: '', category: 'nikola' },
-  { src: '/src/assets/n_003.jpg', alt: '', category: 'milomir' },
+  { src: '/src/assets/n_004.jpg', alt: '', category: 'natalija' },
+  { src: '/src/assets/n_003.jpg', alt: '', category: 'natalija' },
   { src: '/src/assets/n_006.jpg', alt: '', category: 'natalija' },
-  { src: '/src/assets/n_007.jpg', alt: '', category: 'nikola' },
-  { src: '/src/assets/n_005.jpg', alt: '', category: 'milomir' },
-  { src: '/src/assets/n_001.jpg', alt: '', category: 'natalija' },
+  { src: '/src/assets/n_007.jpg', alt: '', category: 'natalija' },
+  { src: '/src/assets/n_005.jpg', alt: '', category: 'natalija' },
+  { src: '/src/assets/img_2.jpg', alt: '', category: 'nikola' },
+  { src: '/src/assets/img_3.jpg', alt: '', category: 'nikola' },
+  { src: '/src/assets/img_1.jpg', alt: '', category: 'milomir' },
 ]
 
 const isModalOpen = ref(false)
@@ -88,6 +90,14 @@ watch(
 </script>
 
 <style scoped>
+button {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
 .gallery-cont {
   margin-top: 1rem;
   padding: 1rem 0;
@@ -111,6 +121,7 @@ watch(
   height: auto;
   max-height: 50rem;
   object-fit: cover;
+  border-radius: 0.1rem;
 }
 
 .gallery-item:hover {
@@ -126,7 +137,8 @@ watch(
 }
 
 .filter-buttons button.active {
-  background-color: silver;
+  color: red;
+  border-color: red;
 }
 
 .modal {
@@ -164,17 +176,22 @@ watch(
 .close-btn {
   position: absolute;
   top: 1%;
-  right: 27%;
+  right: 28%;
   font-size: 2rem;
   background: none;
   border: none;
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1px black;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .close-btn:hover,
 .close-btn:focus {
-  color: silver;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 1);
+  -webkit-text-stroke: 1px white;
 }
 
 @media (max-width: 1200px) {
@@ -193,7 +210,7 @@ watch(
   }
 
   .close-btn {
-    right: 8%;
+    right: 10%;
   }
 }
 </style>
