@@ -11,6 +11,7 @@ export const useAuthStore = defineStore('auth', {
     async login(username, password) {
       try {
         const response = await loginAPICall(username, password)
+
         this.token = 'Bearer ' + response.data.accessToken
         this.user = username
         this.role = response.data.role
@@ -18,6 +19,8 @@ export const useAuthStore = defineStore('auth', {
         localStorage.setItem('token', this.token)
         localStorage.setItem('user', this.user)
         localStorage.setItem('role', this.role)
+
+        return true
       } catch (error) {
         if (error.response) {
           switch (error.response.status) {
@@ -38,8 +41,11 @@ export const useAuthStore = defineStore('auth', {
         } else {
           console.error('Error occurred while setting up the request:', error.message)
         }
+
+        return false
       }
     },
+
     logout() {
       this.token = null
       this.user = null

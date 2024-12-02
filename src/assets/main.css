@@ -52,6 +52,7 @@ button {
   display: block;
   margin-bottom: 1rem;
 }
+
 button {
   padding: 0.5rem 2rem;
   margin-bottom: 2rem;
@@ -61,8 +62,8 @@ button {
 }
 
 button:hover {
-  color: red;
-  border-color: red;
+  color: #cb0000;
+  border-color: #cb0000;
   transition: 0.2s;
 }
 
@@ -71,19 +72,20 @@ input {
   border-right: none;
   border-left: none;
   margin-bottom: 3rem;
+  padding: 0.5rem;
 }
 
 input:focus {
   outline: none;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #cb0000;
 }
 
 input::placeholder {
-  color: #ff7474;
+  color: #cb0000;
 }
 
 input:focus::placeholder {
-  color: red;
+  color: #cb0000;
 }
 
 input::placeholder {
@@ -97,7 +99,7 @@ a {
 a:hover {
   padding-bottom: 1px;
   transition: 0.2s;
-  color: red;
+  color: #cb0000;
 }
 
 li {
@@ -105,7 +107,7 @@ li {
 }
 
 i:hover {
-  color: red;
+  color: #cb0000;
 }
 
 @media (max-width: 767px) {

@@ -8,9 +8,6 @@
         <router-link exact-active-class="active-tab" to="/delete-user">admin</router-link>
       </li>
       <li v-if="!isAuth">
-        <router-link exact-active-class="active-tab" to="/register">register</router-link>
-      </li>
-      <li v-if="!isAuth">
         <router-link exact-active-class="active-tab" to="/login">login</router-link>
       </li>
       <li v-if="isUser">
@@ -54,6 +51,6 @@ ul {
 }
 
 header ul li .active-tab {
-  color: red;
+  color: #cb0000;
 }
 </style>

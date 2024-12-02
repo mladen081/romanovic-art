@@ -137,8 +137,8 @@ button {
 }
 
 .filter-buttons button.active {
-  color: red;
-  border-color: red;
+  color: #cb0000;
+  border-color: #cb0000;
 }
 
 .modal {
