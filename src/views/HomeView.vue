@@ -41,7 +41,7 @@ const isUser = computed(() => authStore.role === 'ROLE_USER')
 }
 
 .red-text {
-  color: red;
+  color: #cb0000;
   margin-top: 2rem;
 }
 
