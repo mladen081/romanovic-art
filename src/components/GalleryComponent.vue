@@ -168,9 +168,9 @@ button {
 
 .modal-content img {
   max-width: 45%;
-  max-height: auto;
+  height: auto;
   object-fit: contain;
-  border: 2px solid white;
+  border: 3px solid white;
 }
 
 .close-btn {

@@ -74,7 +74,7 @@ export default {
 <style scoped>
 .loader {
   position: absolute;
-  top: 50%;
+  bottom: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -85,7 +85,7 @@ export default {
 
 .loader__element {
   border-radius: 50%;
-  border: 1px solid #cb0000;
+  border: 3px solid #cb0000;
   margin: 0 5px;
   width: 20px;
   height: 20px;
@@ -120,9 +120,9 @@ export default {
   text-decoration: underline;
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .loader {
     top: 80%;
   }
-}
+} */
 </style>
