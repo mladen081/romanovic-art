@@ -17,6 +17,7 @@ footer {
   right: 0;
   border-radius: 0.1rem;
   padding: 1rem 5% 1rem 5%;
+  border-bottom: 1px solid #000;
 }
 
 header {
@@ -27,6 +28,7 @@ header {
   right: 0;
   border-radius: 0.1rem;
   padding: 1rem 5% 1rem 5%;
+  border-bottom: 1px solid #000;
 }
 
 h1 {
@@ -71,17 +73,18 @@ input {
   border-top: none;
   border-right: none;
   border-left: none;
+  border-bottom: 1px solid #000;
   margin-bottom: 3rem;
   padding: 0.5rem;
 }
 
 input:focus {
   outline: none;
-  border-bottom: 2px solid #cb0000;
+  border-bottom: 1px solid #cb0000;
 }
 
 input::placeholder {
-  color: #cb0000;
+  color: #363636;
 }
 
 input:focus::placeholder {
