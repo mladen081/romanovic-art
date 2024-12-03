@@ -27,6 +27,11 @@
       <p>Registration failed</p>
       <p>Please try again later.</p>
     </div>
+
+    <div class="register">
+      <p>already have an account?</p>
+      <p><router-link class="register-link" to="/login">sign in</router-link></p>
+    </div>
   </div>
 </template>
 
@@ -111,6 +116,14 @@ export default {
 
 .error-message p {
   color: #cb0000;
+}
+
+.register {
+  margin-top: 4rem;
+}
+
+.register-link {
+  text-decoration: underline;
 }
 
 @media (max-width: 1024px) {

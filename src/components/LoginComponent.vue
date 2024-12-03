@@ -86,7 +86,7 @@ export default {
 .loader__element {
   border-radius: 50%;
   border: 3px solid #cb0000;
-  margin: 0 5px;
+  margin: 0 15px;
   width: 20px;
   height: 20px;
   animation: preloader 0.6s ease-in-out infinite alternate;
@@ -113,16 +113,10 @@ export default {
 }
 
 .register {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 .register-link {
   text-decoration: underline;
 }
-
-/* @media (max-width: 1024px) {
-  .loader {
-    top: 80%;
-  }
-} */
 </style>
