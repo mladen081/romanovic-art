@@ -10,12 +10,7 @@
         <label for="email">email</label>
         <input v-model="email" type="text" id="email" placeholder="your email" />
         <label for="password">password</label>
-        <input
-          v-model="password"
-          type="password"
-          id="password"
-          placeholder="correct horse battery staple"
-        />
+        <input v-model="password" type="password" id="password" placeholder="your password" />
         <button type="submit">submit</button>
       </form>
     </div>
