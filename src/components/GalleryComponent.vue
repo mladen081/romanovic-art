@@ -30,12 +30,14 @@
       </div>
     </div>
 
-    <div v-if="isModalOpen" class="modal" @click="closeModal">
-      <div class="modal-content" @click.stop>
-        <img :src="modalImage.src" :alt="modalImage.alt" />
-        <button class="close-btn" @click="closeModal">X</button>
+    <transition name="modal-fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
+      <div v-if="isModalOpen" class="modal" @click="closeModal">
+        <div class="modal-content" @click.stop>
+          <img :src="modalImage.src" :alt="modalImage.alt" />
+          <button class="close-btn" @click="closeModal">X</button>
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -87,6 +89,32 @@ watch(
     selectedCategory.value = newCategory
   },
 )
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeModal()
+  }
+})
+
+const beforeEnter = (el) => {
+  el.style.opacity = 0
+  el.style.transform = 'scale(0.8)'
+}
+
+const enter = (el, done) => {
+  el.offsetHeight
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
+  el.style.opacity = 1
+  el.style.transform = 'scale(1)'
+  done()
+}
+
+const leave = (el, done) => {
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
+  el.style.opacity = 0
+  el.style.transform = 'scale(0.8)'
+  el.addEventListener('transitionend', done)
+}
 </script>
 
 <style scoped>
