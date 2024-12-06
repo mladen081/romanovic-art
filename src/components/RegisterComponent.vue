@@ -30,7 +30,7 @@
 
     <div class="register">
       <p>already have an account?</p>
-      <p><router-link class="register-link" to="/login">sign in</router-link></p>
+      <p><router-link class="register-link" to="/login#">sign in</router-link></p>
     </div>
   </div>
 </template>
