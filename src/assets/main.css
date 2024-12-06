@@ -116,6 +116,54 @@ i:hover {
   color: #cb0000;
 }
 
+.loader {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader__element {
+  border-radius: 50%;
+  border: 2px solid #cb0000;
+  margin: 0 15px;
+  width: 20px;
+  height: 20px;
+  animation: preloader 0.6s ease-in-out infinite alternate;
+}
+
+.loader__element:nth-child(1) {
+  animation-delay: 0s;
+}
+.loader__element:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loader__element:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes preloader {
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+.error-message p {
+  color: #cb0000;
+}
+
+.register {
+  margin-top: 4rem;
+}
+
+.register-link {
+  text-decoration: underline;
+}
+
 @media (max-width: 767px) {
   h1 {
     font-size: 3rem;
