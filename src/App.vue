@@ -5,6 +5,9 @@
         <router-link exact-active-class="active-tab" to="/">home</router-link>
       </li>
       <li v-if="isAdmin">
+        <router-link exact-active-class="active-tab" to="/matches">matches</router-link>
+      </li>
+      <li v-if="isAdmin">
         <router-link exact-active-class="active-tab" to="/delete-user">admin</router-link>
       </li>
       <li v-if="!isAuth">
