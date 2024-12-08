@@ -51,6 +51,11 @@ input {
   color: black;
 }
 
+.red-text {
+  font-weight: 400;
+  color: #cb0000;
+}
+
 label,
 input,
 button {

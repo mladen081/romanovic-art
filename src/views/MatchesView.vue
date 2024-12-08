@@ -30,20 +30,26 @@
       </div>
     </div>
 
-    <div v-if="isModalOpen" class="modal">
-      <div class="modal-content">
-        <label for="admin-password">confirm admin password</label>
-        <input
-          v-model="adminPassword"
-          name="admin-password"
-          id="admin-password"
-          type="password"
-          placeholder="enter password"
-        />
-        <button @click="confirmPassword">confirm</button>
-        <button @click="closeModal">cancel</button>
+    <transition name="modal-fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
+      <div v-if="isModalOpen" class="modal">
+        <div class="modal-content">
+          <label for="admin-password">confirm admin password</label>
+          <input
+            v-model="adminPassword"
+            name="admin-password"
+            id="admin-password"
+            type="password"
+            placeholder="enter password"
+          />
+          <button @click="confirmPassword">confirm</button>
+          <button @click="closeModal">cancel</button>
+          <div v-if="loginError" class="error-message">
+            <p>wrong password</p>
+            <p>check your credentials</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -56,6 +62,7 @@ const authStore = useAuthStore()
 const matches = ref([])
 const isModalOpen = ref(false)
 const adminPassword = ref('')
+const loginError = ref(false)
 const selectedMatchId = ref(null)
 
 onMounted(async () => {
@@ -82,6 +89,7 @@ const openDeleteModal = (matchId) => {
 const closeModal = () => {
   isModalOpen.value = false
   adminPassword.value = ''
+  loginError.value = false // Reset the error message when modal is closed
 }
 
 const confirmPassword = async () => {
@@ -91,22 +99,43 @@ const confirmPassword = async () => {
     await removeMatch(selectedMatchId.value)
     closeModal()
   } else {
-    alert('Incorrect password!')
+    loginError.value = true // Show error message if password is incorrect
   }
 }
 
 const validateAdminPassword = async (password) => {
-  return password === 'tata'
+  return password === 'tata' // Example of a hardcoded password check
 }
 
 const removeMatch = async (matchId) => {
   try {
     await deleteMatch(matchId)
-    console.log('successfully deleted match')
+    console.log('Successfully deleted match')
     listMatches()
   } catch (error) {
-    console.error('error deleting match:', error)
+    console.error('Error deleting match:', error)
   }
+}
+
+// Transition hooks
+const beforeEnter = (el) => {
+  el.style.opacity = 0
+  el.style.transform = 'scale(0.8)'
+}
+
+const enter = (el, done) => {
+  el.offsetHeight // Trigger reflow to restart transition
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
+  el.style.opacity = 1
+  el.style.transform = 'scale(1)'
+  done()
+}
+
+const leave = (el, done) => {
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
+  el.style.opacity = 0
+  el.style.transform = 'scale(0.8)'
+  el.addEventListener('transitionend', done)
 }
 </script>
 
@@ -168,6 +197,21 @@ const removeMatch = async (matchId) => {
   width: 300px;
 }
 
+/* Transition animation */
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.modal-fade-enter,
+.modal-fade-leave-to {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Mobile responsiveness */
 @media (max-width: 991px) {
   .matches-grid {
     grid-template-columns: 1fr; /* 1 kolona za najmanje ekrane */
