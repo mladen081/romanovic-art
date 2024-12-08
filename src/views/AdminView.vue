@@ -1,12 +1,12 @@
 <template>
   <div class="users-container">
-    <h1>Delete User</h1>
+    <h1>delete user</h1>
     <div class="users-grid">
       <div class="grid-header">
-        <p>User ID</p>
-        <p>Username</p>
-        <p>Email</p>
-        <p>Delete</p>
+        <p>user id</p>
+        <p>username</p>
+        <p>email</p>
+        <p>delete</p>
       </div>
       <div v-for="user in users" :key="user.id" class="user-row">
         <p>{{ user.id }}</p>
@@ -26,7 +26,7 @@
     <transition name="modal-fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
       <div v-if="isModalOpen" class="modal">
         <div class="modal-content">
-          <label for="admin-password">Confirm admin password</label>
+          <label for="admin-password">confirm admin password</label>
           <input
             v-model="adminPassword"
             name="admin-password"
