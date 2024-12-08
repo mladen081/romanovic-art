@@ -32,13 +32,13 @@
             name="admin-password"
             id="admin-password"
             type="password"
-            placeholder="Enter password"
+            placeholder="enter password"
           />
-          <button @click="confirmPassword">Confirm</button>
-          <button @click="closeModal">Cancel</button>
+          <button @click="confirmPassword">confirm</button>
+          <button @click="closeModal">cancel</button>
           <div v-if="loginError" class="error-message">
-            <p>Wrong password</p>
-            <p>Check your credentials</p>
+            <p>wrong password</p>
+            <p>check your credentials</p>
           </div>
         </div>
       </div>
