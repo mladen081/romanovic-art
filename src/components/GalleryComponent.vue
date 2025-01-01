@@ -46,15 +46,15 @@ import { ref, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 const images = [
-  { src: '/src/assets/n_002.jpg', alt: '', category: 'natalija' },
-  { src: '/src/assets/n_004.jpg', alt: '', category: 'natalija' },
-  { src: '/src/assets/n_003.jpg', alt: '', category: 'natalija' },
-  { src: '/src/assets/n_006.jpg', alt: '', category: 'natalija' },
-  { src: '/src/assets/n_007.jpg', alt: '', category: 'natalija' },
-  { src: '/src/assets/n_005.jpg', alt: '', category: 'natalija' },
-  { src: '/src/assets/img_2.jpg', alt: '', category: 'nikola' },
-  { src: '/src/assets/img_3.jpg', alt: '', category: 'nikola' },
-  { src: '/src/assets/img_1.jpg', alt: '', category: 'milomir' },
+  { src: '/assets/n_002.jpg', alt: '', category: 'natalija' },
+  { src: '/assets/n_004.jpg', alt: '', category: 'natalija' },
+  { src: '/assets/n_003.jpg', alt: '', category: 'natalija' },
+  { src: '/assets/n_006.jpg', alt: '', category: 'natalija' },
+  { src: '/assets/n_007.jpg', alt: '', category: 'natalija' },
+  { src: '/assets/n_005.jpg', alt: '', category: 'natalija' },
+  { src: '/assets/img_2.jpg', alt: '', category: 'nikola' },
+  { src: '/assets/img_3.jpg', alt: '', category: 'nikola' },
+  { src: '/assets/img_1.jpg', alt: '', category: 'milomir' },
 ]
 
 const isModalOpen = ref(false)
