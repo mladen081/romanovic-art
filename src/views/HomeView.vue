@@ -3,10 +3,10 @@
   <p v-if="isAdmin">logged in as admin</p>
 
   <div class="slide" v-if="isUser">
-    <p class="slide-text">natalija</p>
-    <p class="slide-text-r">nikola</p>
-    <p class="slide-text">milomir</p>
-    <p class="slide-text-r red-text">romanovic</p>
+    <p class="slide-text">n</p>
+    <p class="slide-text-r">n</p>
+    <p class="slide-text">m</p>
+    <p class="slide-text-r red-text">r</p>
   </div>
 </template>
 

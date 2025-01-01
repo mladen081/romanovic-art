@@ -6,16 +6,16 @@
         :class="{ active: selectedCategory === 'natalija' }"
         @click="changeCategory('natalija')"
       >
-        natalija
+        n
       </button>
       <button :class="{ active: selectedCategory === 'nikola' }" @click="changeCategory('nikola')">
-        nikola
+        n
       </button>
       <button
         :class="{ active: selectedCategory === 'milomir' }"
         @click="changeCategory('milomir')"
       >
-        milomir
+        m
       </button>
     </div>
 
